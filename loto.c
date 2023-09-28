@@ -21,7 +21,7 @@
 #define FALSE 0
 #define TRUE 1
 #define MAX_INTENTOS 1000
-#define MAX_SORTEOS 100	/* Acá la cantidad de sorteos a jugar */
+#define MAX_SORTEOS 1	/* Acá la cantidad de sorteos a jugar */
 #define NUMERO_APUESTAS 1
 #define SELECCION_TODOS_LOS_NUMEROS TRUE
 
