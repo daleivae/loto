@@ -21,12 +21,13 @@
 #define FALSE 0
 #define TRUE 1
 #define MAX_INTENTOS 1000
-#define MAX_SORTEOS 1	/* Acá la cantidad de sorteos a jugar */
-#define NUMERO_APUESTAS 1
 #define SELECCION_TODOS_LOS_NUMEROS TRUE
 
 int numerosMasRepiten[] = {1,2,4,5,6,7,8,9,10,11,12,15,16,17,18,20,21,22,23,25,26,29,31,32,33,34,37,38,39};
 int tamNumMasRepiten=29;
+
+int maxSorteos = 0;	/* Acá la cantidad de sorteos a jugar */
+int numeroApuestas = 0;
 
 int arregloSorteoAnterior[]={0,0,0,0,0,0};
 
@@ -58,7 +59,7 @@ int main(int argc, char *argv[])
     int restasFueraRango=0;
     int arregloBolas[]={0,0,0,0,0,0};
     int terminar=FALSE;
-    int apuestas[MAX_SORTEOS][MAXIMO_NUMERO_BOLAS];
+    int apuestas[maxSorteos][MAXIMO_NUMERO_BOLAS];
     int apuestasValidas=0;
     int i=0;
 
@@ -69,6 +70,18 @@ int main(int argc, char *argv[])
         printf("Número %d: ", i + 1);
         scanf("%d", &arregloSorteoAnterior[i]);
     }
+
+    // Solicitar al usuario que ingrese el máximo de sorteos
+    printf("Por favor, ingrese la cantidad de sorteos: ");
+    
+    // Leer el número ingresado por el usuario
+    scanf("%d", &maxSorteos);
+
+   // Solicitar al usuario que ingrese la cantidad de apuestas
+    printf("Por favor, ingrese la cantidad de apuestas: ");
+    
+    // Leer el número ingresado por el usuario
+    scanf("%d", &numeroApuestas);
 
     InicializarMatriz(apuestas);
 
@@ -115,7 +128,7 @@ int main(int argc, char *argv[])
             apuestasValidas++;
         }
 
-    } while (numeroSorteo < MAX_SORTEOS);
+    } while (numeroSorteo < maxSorteos);
 
     if (apuestasValidas > 0)
         SeleccionarApuesta(apuestas);
@@ -126,15 +139,15 @@ int main(int argc, char *argv[])
 void SeleccionarApuesta(int (*apuestas)[MAXIMO_NUMERO_BOLAS])
 {
     int i=0, j=0, nSorteo=0;
-    int sorteoSeleccionado[MAX_SORTEOS]={0};
+    int sorteoSeleccionado[maxSorteos]={0};
     int coincide=FALSE;
 
-    for (i=0; i < NUMERO_APUESTAS; i++)
+    for (i=0; i < numeroApuestas; i++)
     {
         do
         {
             coincide = FALSE;
-            nSorteo = aleatorio_en_rango(0, MAX_SORTEOS-1);
+            nSorteo = aleatorio_en_rango(0, maxSorteos-1);
             for (j=0; j < i; j++)
                 if (nSorteo == sorteoSeleccionado[j]) coincide=TRUE;
 
@@ -163,7 +176,7 @@ void InicializarMatriz(int (*matriz)[MAXIMO_NUMERO_BOLAS])
 {
     int i=0, j=0;
 
-    for (i=0; i < MAX_SORTEOS; i++)
+    for (i=0; i < maxSorteos; i++)
         for (j=0; j < MAXIMO_NUMERO_BOLAS; j++)
             matriz[i][j] = 0;
 
