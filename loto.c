@@ -28,7 +28,7 @@
 int numerosMasRepiten[] = {1,2,4,5,6,7,8,9,10,11,12,15,16,17,18,20,21,22,23,25,26,29,31,32,33,34,37,38,39};
 int tamNumMasRepiten=29;
 
-int arregloSorteoAnterior[]={3,9,11,28,34,36};
+int arregloSorteoAnterior[]={17,24,31,34,36,38};
 
 void ObtenerBola(int numeroBola, int *arregloBolas, int *arregloSorteoAnterior,
                 int *nroCoincidentesSa, int *cantidadUnDigito, int *nroPares, int *nroPrimos);
