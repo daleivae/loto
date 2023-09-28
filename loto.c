@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
     int restasFueraRango=0;
     int arregloBolas[]={0,0,0,0,0,0};
     int terminar=FALSE;
-    int apuestas[maxSorteos][MAXIMO_NUMERO_BOLAS];
+    int apuestas[MAX_INTENTOS][MAXIMO_NUMERO_BOLAS];
     int apuestasValidas=0;
     int i=0;
 
