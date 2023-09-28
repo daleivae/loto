@@ -71,8 +71,8 @@ int main(int argc, char *argv[])
         scanf("%d", &arregloSorteoAnterior[i]);
     }
 
-    // Solicitar al usuario que ingrese el máximo de sorteos
-    printf("Por favor, ingrese la cantidad de sorteos: ");
+    // Solicitar al usuario que ingrese el máximo de sorteos a simular
+    printf("Por favor, ingrese la cantidad de simulaciones: ");
     
     // Leer el número ingresado por el usuario
     scanf("%d", &maxSorteos);
@@ -154,7 +154,7 @@ void SeleccionarApuesta(int (*apuestas)[MAXIMO_NUMERO_BOLAS])
         } while (coincide == TRUE);
 
         sorteoSeleccionado[i] = nSorteo;
-        printf("Sorteo seleccionado Nro.%i: ", nSorteo);
+        printf("Sorteo seleccionado Nro.%i: ", nSorteo+1);
         ImprimirVector(apuestas[nSorteo]);
     }
 
@@ -169,8 +169,8 @@ void CargarMatriz(int (*matriz)[MAXIMO_NUMERO_BOLAS], int numero, int *arregloBo
     for (j=0; j < MAXIMO_NUMERO_BOLAS; j++)
         matriz[i][j]=arregloBolas[j];
 
-    printf("Sorteo Nro.%i: ", numero);
-    ImprimirVector(arregloBolas);
+    /*printf("Sorteo Nro.%i: ", numero);*/
+    /*ImprimirVector(arregloBolas);*/
 }
 
 void InicializarMatriz(int (*matriz)[MAXIMO_NUMERO_BOLAS])
