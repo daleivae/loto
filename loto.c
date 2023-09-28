@@ -154,9 +154,10 @@ void SeleccionarApuesta(int (*apuestas)[MAXIMO_NUMERO_BOLAS])
         } while (coincide == TRUE);
 
         sorteoSeleccionado[i] = nSorteo;
-
-        /*ImprimirVector(apuestas[nSorteo]);*/
+        printf("Sorteo seleccionado Nro.%i: ", nSorteo);
+        ImprimirVector(apuestas[nSorteo]);
     }
+
 }
 
 void CargarMatriz(int (*matriz)[MAXIMO_NUMERO_BOLAS], int numero, int *arregloBolas)
