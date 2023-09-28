@@ -28,7 +28,7 @@
 int numerosMasRepiten[] = {1,2,4,5,6,7,8,9,10,11,12,15,16,17,18,20,21,22,23,25,26,29,31,32,33,34,37,38,39};
 int tamNumMasRepiten=29;
 
-int arregloSorteoAnterior[]={17,24,31,34,36,38};
+int arregloSorteoAnterior[]={0,0,0,0,0,0};
 
 void ObtenerBola(int numeroBola, int *arregloBolas, int *arregloSorteoAnterior,
                 int *nroCoincidentesSa, int *cantidadUnDigito, int *nroPares, int *nroPrimos);
@@ -60,6 +60,14 @@ int main(int argc, char *argv[])
     int terminar=FALSE;
     int apuestas[MAX_SORTEOS][MAXIMO_NUMERO_BOLAS];
     int apuestasValidas=0;
+
+    printf("Por favor, ingrese los 6 números del sorteo anterior:\n");
+    
+    // Solicitar al usuario que ingrese los 6 números
+    for (int i = 0; i < 6; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &arregloSorteoAnterior[i]);
+    }
 
     InicializarMatriz(apuestas);
 
