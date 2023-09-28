@@ -60,11 +60,12 @@ int main(int argc, char *argv[])
     int terminar=FALSE;
     int apuestas[MAX_SORTEOS][MAXIMO_NUMERO_BOLAS];
     int apuestasValidas=0;
+    int i=0;
 
     printf("Por favor, ingrese los 6 números del sorteo anterior:\n");
     
     // Solicitar al usuario que ingrese los 6 números
-    for (int i = 0; i < 6; i++) {
+    for (i = 0; i < 6; i++) {
         printf("Número %d: ", i + 1);
         scanf("%d", &arregloSorteoAnterior[i]);
     }
