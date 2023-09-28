@@ -28,6 +28,7 @@ int tamNumMasRepiten=29;
 
 int maxSorteos = 0;	/* Acá la cantidad de sorteos a jugar */
 int numeroApuestas = 0;
+int apuestasValidas=0;
 
 int arregloSorteoAnterior[]={0,0,0,0,0,0};
 
@@ -60,7 +61,6 @@ int main(int argc, char *argv[])
     int arregloBolas[]={0,0,0,0,0,0};
     int terminar=FALSE;
     int apuestas[MAX_INTENTOS][MAXIMO_NUMERO_BOLAS];
-    int apuestasValidas=0;
     int i=0;
 
     printf("Por favor, ingrese los 6 números del sorteo anterior:\n");
@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
 
         if (terminar)
         {
-            CargarMatriz(apuestas, numeroSorteo, arregloBolas);
+            CargarMatriz(apuestas, apuestasValidas, arregloBolas);
             apuestasValidas++;
         }
 
@@ -147,7 +147,7 @@ void SeleccionarApuesta(int (*apuestas)[MAXIMO_NUMERO_BOLAS])
         do
         {
             coincide = FALSE;
-            nSorteo = aleatorio_en_rango(0, maxSorteos-1);
+            nSorteo = aleatorio_en_rango(0, apuestasValidas-1);
             for (j=0; j < i; j++)
                 if (nSorteo == sorteoSeleccionado[j]) coincide=TRUE;
 
@@ -164,7 +164,7 @@ void CargarMatriz(int (*matriz)[MAXIMO_NUMERO_BOLAS], int numero, int *arregloBo
 {
     int i=0,j=0;
 
-    i=numero-1;
+    i=numero;
 
     for (j=0; j < MAXIMO_NUMERO_BOLAS; j++)
         matriz[i][j]=arregloBolas[j];
