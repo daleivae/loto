@@ -21,7 +21,7 @@
 #define FALSE 0
 #define TRUE 1
 #define MAX_INTENTOS 1000
-#define MAX_SORTEOS 2	/* Acá la cantidad de sorteos a jugar */
+#define MAX_SORTEOS 100	/* Acá la cantidad de sorteos a jugar */
 #define NUMERO_APUESTAS 1
 #define SELECCION_TODOS_LOS_NUMEROS TRUE
 
@@ -42,7 +42,7 @@ void InicializarMatriz(int (*matriz)[MAXIMO_NUMERO_BOLAS]);
 void CargarMatriz(int (*matriz)[MAXIMO_NUMERO_BOLAS], int numeroSorteo, int *arregloBolas);
 void SeleccionarApuesta(int (*apuestas)[MAXIMO_NUMERO_BOLAS]);
 
-int main()
+int main(int argc, char *argv[])
 {
     int indice=0;
     int intentos=0;
