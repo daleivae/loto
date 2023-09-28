@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
 void SeleccionarApuesta(int (*apuestas)[MAXIMO_NUMERO_BOLAS])
 {
     int i=0, j=0, nSorteo=0;
-    int sorteoSeleccionado[maxSorteos]={0};
+    int sorteoSeleccionado[MAX_INTENTOS]={0};
     int coincide=FALSE;
 
     for (i=0; i < numeroApuestas; i++)
