@@ -305,7 +305,7 @@ void ImprimirVector(int *vNum)
 
 int esPrimo(int numero)
 {
-    //int x=0;
+    int x=0;
 
     if (numero == 0 || numero == 1) return FALSE;
     /*
@@ -316,7 +316,8 @@ int esPrimo(int numero)
           Nota: solo es para el 4, los dem�s funcionan bien
     */
     if (numero == 4) return FALSE;
-    for (int x = 2; x < numero / 2; x++)
+
+    for (x = 2; x < numero / 2; x++)
     {
         /* Si es divisible por cualquiera de estos n�meros, no
         // es primo*/
