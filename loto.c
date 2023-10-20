@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
 
     if (maxSorteos > MAX_INTENTOS)
     {
-        printf("Por favor ingrese una cantidad de simulaciones menor o igual a %d", MAX_INTENTOS);
+        printf("Por favor ingrese una cantidad de simulaciones no superior a %d\n", MAX_INTENTOS);
         exit(0);
     }    
 
