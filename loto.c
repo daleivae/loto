@@ -72,10 +72,16 @@ int main(int argc, char *argv[])
     }
 
     // Solicitar al usuario que ingrese el máximo de sorteos a simular
-    printf("Por favor, ingrese la cantidad de simulaciones: ");
+    printf("Por favor, ingrese la cantidad de simulaciones (Máx. %d): ", MAX_INTENTOS);
     
     // Leer el número ingresado por el usuario
     scanf("%d", &maxSorteos);
+
+    if (maxSorteos > MAX_INTENTOS)
+    {
+        printf("Por favor ingrese una cantidad de simulaciones menor o igual a %d", MAX_INTENTOS);
+        exit(0);
+    }    
 
    // Solicitar al usuario que ingrese la cantidad de apuestas
     printf("Por favor, ingrese la cantidad de apuestas: ");
